@@ -1,0 +1,19 @@
+{
+   "products": [
+       {
+           "code": "item0001",
+           "name": "Tofu",
+           "price": 10.99
+       },
+       {
+           "code": "item0002",
+           "name": "Avocado",
+           "price": 3.99
+       },
+       {
+           "code": "item0003",
+           "name": "Coconut Milk",
+           "price": 5.99
+       }
+   ]
+}
