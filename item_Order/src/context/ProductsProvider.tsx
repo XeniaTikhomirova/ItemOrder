@@ -39,17 +39,19 @@ type ChildrenType = {
 export const ProductsProvider = ({ children }: ChildrenType): ReactElement => {
   const [products, setProducts] = useState<ProductType[]>(initState);
 
-  useEffect(() => {
-    const fetchProd = async (): Promise<ProductType[]> => {
-      const data = await fetch("http://localhost:5173/products").then((res) => {
-        res.json().catch((err) => {
-          if (err instanceof Error) console.log(err.message)
-        })
-      })
-      return data;
-    }
-    fetchProd().then(products => setProducts(products))
-  }, []);
+    useEffect(() => {
+      const fetchProd = async (): Promise<ProductType[]> => {
+        const data = await fetch("http://localhost:5173/products")
+          .then((res) => {
+            return res.json();
+          })
+          .catch((err) => {
+            if (err instanceof Error) console.log(err.message);
+          });
+        return data;
+      };
+      fetchProd().then(products => setProducts(products));
+    }, []);
 
   return (
     <ProductsContext.Provider value={{ products }}>
