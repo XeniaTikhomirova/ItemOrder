@@ -1,4 +1,4 @@
-import { createContext, ReactElement, useState, useEffect } from "react";
+import { createContext, ReactElement, useState} from "react";
 
 export type ProductType = {
   code: string;
